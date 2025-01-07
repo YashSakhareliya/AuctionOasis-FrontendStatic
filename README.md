@@ -13,8 +13,8 @@ AuctionOasis is a platform designed to connect individuals interested in collect
   ```
 _
  ├── index.html # Main HTML file
- ├── css/ # Folder for CSS files
- ├── js/ # Folder for JavaScript files
+ ├── styles/ # Folder for CSS files
+ ├── scripts/ # Folder for JavaScript files
  ├── images/ # Folder for images and icons
   ```
 
