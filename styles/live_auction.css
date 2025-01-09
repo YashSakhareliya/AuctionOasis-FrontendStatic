@@ -1,6 +1,40 @@
+.live-auction-section{
+    /* padding-top: 1rem; */
+    /* border: 1px solid #000; */
+    min-height: 80vmin;
+}
 .live-auction-container{
+    padding-top: 1rem;
+}
+
+.live-auction-filter{
+    /* border: 1px solid #000; */
+    padding: 0.5rem;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
     
 }
+
+.live-auction-filter select{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+/* .live-auction-filter option{
+    padding: 0.5rem;
+} */
+
+.filter-item-grid{
+    margin-top: 2rem;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
 
 
 
