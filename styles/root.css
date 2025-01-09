@@ -65,6 +65,6 @@
     --transition: all 0.3s ease;
   
     /* Navbar */
-    --navbar-height: 80px;
+    --navbar-height: 70px;
     --navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
