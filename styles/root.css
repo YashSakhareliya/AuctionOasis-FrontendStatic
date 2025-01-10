@@ -47,6 +47,7 @@
     /* Font */
     --h1-font-size: 2.5rem;
     --h2-font-size: 1.5rem;
+    --h3-font-size: 1.3rem;
     --body-font-size: 1rem;
     --font-family: 'Arial', sans-serif;
     --line-height: 1.5; /* Improved line-height for better text readability */
