@@ -1,0 +1,27 @@
+.item-details{
+    border: 1px solid black;
+    padding-top: 2rem;
+}
+
+.item-container{
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+.item-image{
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    /* margin-bottom: 1rem; */
+}
+.item-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
