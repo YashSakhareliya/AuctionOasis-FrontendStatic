@@ -1,4 +1,4 @@
-// Event delegation for the profile button
+// Event listener add on profile dropdown button
 document.addEventListener("click", function (e) {
     var dropdown = document.getElementById("profile-dropdown");
     var profileBtn = document.getElementById("profile-btn");
