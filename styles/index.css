@@ -179,7 +179,7 @@ header{
 
 
 /* .hero-section{
-    padding-top: 3rem;
+    padding-top: 6rem;
     margin-right: 0;
 
 } */
@@ -213,6 +213,7 @@ img{
 .hero-content-text span{
     font-size: 4rem;
     font-weight: 1000;
+    color: #000;
     /* color: var(--text-color); */
 }
 #span2{
@@ -233,8 +234,8 @@ img{
     
 }
 
-.hero-content-button button{
-    padding: 1rem 2rem;
+.hero-content-button a{
+    padding: var(--btn-padding);
     border-radius: var(--border-radius);
     font-size: 1.5rem;
     font-weight: 500;
@@ -345,10 +346,10 @@ img{
     
 } 
 
-.feature-view-all-btn button{
-    padding: 1rem 2rem;
+.feature-view-all-btn a{
+    padding: var(--btn-padding);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     background-color: var(--primary-color); 
     color: #fff;
     font-size: 1.1rem;
