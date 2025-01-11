@@ -129,7 +129,7 @@ header{
     display: none; /* Initially hidden */
     opacity: 0;
     position: absolute;
-    top: 50px;
+    top: 40px;
     right: -12px;
     background-color: #fff;
     border-radius: 5px;
@@ -146,6 +146,7 @@ header{
 }
 
 .profile-dropdown ul li {
+    font-size: medium;
     padding: 10px;
     border-bottom: 1px solid #ddd;
 }
@@ -154,9 +155,19 @@ header{
     border-bottom: none;
 }
 
-.profile-dropdown ul li a {
-    text-decoration: none;
+.profile-dropdown #username{
     color: #000;
+    border-bottom:1px solid #000;
+}
+
+.profile-dropdown ul li a {
+    
+    text-decoration: none;
+    color: #1e1e1e;
+    
+}
+.profile-dropdown i{
+    padding-right: 15px;
 }
 
 .profile-dropdown ul li a:hover {
