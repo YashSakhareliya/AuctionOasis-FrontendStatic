@@ -6,7 +6,7 @@
 }
 
 body {
-    margin-top: 60px;
+    margin-top: 50px;
     font-family: var(--font-family);
     font-size: var(--body-font-size);
     background-color: var(--primary-bg-color);
@@ -54,11 +54,10 @@ header {
     box-shadow: var(--navbar-shadow);
     z-index: 1000;
 }
-/* .nav-section{
-    margin-left: 4%;
-    margin-right: 2%;
-    
+.nav-section{
+    padding: 0.5rem 8%;
 }
+    /*
 header{
     box-shadow: 2px 0px 2px 0.1px;
 } */
@@ -97,7 +96,7 @@ header{
 
 .nav-links li  {
     color: var(--text-color);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     padding: 6px 12px;
     
@@ -109,6 +108,14 @@ header{
     background-color: rgb(226, 226, 226);
    /* transform: scale(1.1);  Slight scale effect instead of padding */
     border-radius: 5px;
+}
+
+.nav-links #list-item{
+    font-weight: lighter;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--primary-btn-color);
+
 }
 #sign-up-btn{
     background-color: var(--primary-color);
@@ -394,8 +401,8 @@ img{
 
 .about-auctionoasis-flex-item{
     padding: 1rem;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
