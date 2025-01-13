@@ -131,3 +131,85 @@
 .tab-content.active {
     display: block;
 }
+
+/* My Items Grid */
+.my-items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.my-item {
+    margin: 1rem 0;
+    width: 420px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+.my-item-image{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.my-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.my-item-content {
+    background-color: var(--card-bg);
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 2rem;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+.my-item-title h2 {
+    font-size: var(--h2-font-size);
+    font-weight: 1000;
+    color: #000;
+}
+
+.my-item-price p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.my-item-summery ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bid-time, 
+.bid-info{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.my-item-summery ul li {
+    font-size: 14px;
+    color: #666;
+}
+
+.my-item-summery ul li a {
+    color: #6b38fb;
+    text-decoration: none;
+}
+
+.my-item-summery ul li a:hover {
+    text-decoration: underline;
+}
