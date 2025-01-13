@@ -64,3 +64,31 @@
 .profile-edit-btn a:hover {
     text-decoration: underline;
 }
+
+/* Profile Buttons */
+.user-profile-btn-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.user-profile-btn-container button,
+.user-profile-btn-container a {
+    padding: 0.8rem 1.5rem;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-btn-color);
+    background-color: var(--primary-btn-color);
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 20px;
+}
+#plus-symbol{
+    margin-right: 5px;
+}
+
+.user-profile-btn-container button:hover,
+.user-profile-btn-container a:hover {
+    background-color: #5731cb;
+}
