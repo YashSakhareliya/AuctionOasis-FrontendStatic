@@ -72,8 +72,7 @@
     margin-bottom: 20px;
 }
 
-.user-profile-btn-container button,
-.user-profile-btn-container a {
+.user-profile-btn-container button {
     padding: 0.8rem 1.5rem;
     font-size: 14px;
     border-radius: 5px;
@@ -83,14 +82,34 @@
     cursor: pointer;
     text-decoration: none;
     margin-right: 20px;
+    transition: var(--transition);
+}
+
+.user-profile-btn-container a {
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #9c9c9e;
+    border-radius: 5px;
+    margin-right: 20px;
 }
 #plus-symbol{
     margin-right: 5px;
 }
 
-.user-profile-btn-container button:hover,
-.user-profile-btn-container a:hover {
+.user-profile-btn-container button:hover {
     background-color: #5731cb;
+    text-decoration: underline;
+}
+
+
+.user-profile-btn-container a:hover{
+    background-color: #b7b8ba;
+    text-decoration: underline;
 }
 
 
