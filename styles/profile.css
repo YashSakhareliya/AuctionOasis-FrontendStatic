@@ -187,20 +187,39 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.bid-history-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.bid-item-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid  #9c9c9e;
+}
+.bid-details,
+.bid-amount{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .bid-details h2 {
-font-size: 18px;
-color: #333;
+    font-size: 18px;
+    color: #333;
 }
 
 .bid-details p {
-font-size: 14px;
-color: #666;
+    font-size: 14px;
+    color: #666;
 }
 
 .bid-amount p {
-font-size: 16px;
-color: #6b38fb;
-font-weight: bold;
+    font-size: 16px;
+    color: green;
+    font-weight: bold;
 }
 
 /* Tabs Section */
