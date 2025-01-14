@@ -93,44 +93,8 @@
     background-color: #5731cb;
 }
 
-/* Tabs Section */
-.tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-}
 
-.tab {
-    padding: 10px 20px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s, color 0.3s;
-}
 
-.tab.active {
-    border-bottom: 3px solid #6b38fb;
-    background-color: #fff;
-    color: #6b38fb;
-    font-weight: bold;
-}
-
-.tab:hover {
-    background-color: #eaeaea;
-}
-
-/* Tab Content */
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
 
 /* My Items Grid */
 .my-items-grid {
@@ -140,7 +104,7 @@
 }
 
 .my-item {
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
     width: 420px;
     height: 350px;
     display: flex;
@@ -216,11 +180,11 @@
 
 /* Bid History Content */
 .bid-history {
-background-color: #fff;
-padding: 15px;
-border: 1px solid #ddd;
-border-radius: 10px;
-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .bid-details h2 {
@@ -237,4 +201,44 @@ color: #666;
 font-size: 16px;
 color: #6b38fb;
 font-weight: bold;
+}
+
+/* Tabs Section */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+    border-bottom: 3px solid #6b38fb;
+    background-color: #fff;
+    color: #6b38fb;
+    font-weight: bold;
+}
+
+.tab:hover {
+    background-color: #eaeaea;
+}
+
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
