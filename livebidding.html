@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Bidding - AuctionOasis</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/livebidding.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="bidding-container">
+            <header class="bidding-header">
+                <h1>Live Bidding</h1>
+                <p class="subtitle">Track your registered auctions and participate in live bidding</p>
+            </header>
+
+            <nav class="tab-nav" id="biddingTabs">
+                <button class="tab-btn active" data-tab="upcoming">Upcoming</button>
+                <button class="tab-btn" data-tab="active">Active</button>
+                <button class="tab-btn" data-tab="ended">Ended</button>
+            </nav>
+
+            <div id="auctionsList" class="auctions-list"></div>
+        </div>
+    </div>
+
+    <script src="./scripts/livebidding.js"></script>
+</body>
+</html>

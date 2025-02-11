@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Items - AuctionOasis</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/myItems.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <div class="header-content">
+                <h1>My Listed Items</h1>
+                <p class="subtitle">Manage and track all your listed items</p>
+            </div>
+            <button onclick="openListingModal()" class="btn-primary">
+                <i data-lucide="plus" class="icon-sm"></i>
+                List New Item
+            </button>
+        </header>
+
+        <div class="filters-section">
+            <div class="search-container">
+                <input
+                    type="text"
+                    placeholder="Search items..."
+                    id="searchInput"
+                    class="search-input"
+                />
+                <i data-lucide="search" class="search-icon"></i>
+            </div>
+            <div class="filter-select">
+                <i data-lucide="filter" class="icon-sm"></i>
+                <select id="statusFilter" class="select-input">
+                    <option value="all">All Status</option>
+                    <option value="live">Live</option>
+                    <option value="ended">Ended</option>
+                    <option value="upcoming">Upcoming</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="items-grid" id="itemsGrid"></div>
+    </div>
+
+    <div id="listingModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>List an Item for Auction</h2>
+                <button onclick="closeListingModal()" class="modal-close">
+                    <i data-lucide="x" class="icon-sm"></i>
+                </button>
+            </div>
+            <form id="listingForm" class="modal-body">
+                <div class="form-group">
+                    <label>Item Images</label>
+                    <div class="upload-area">
+                        <i data-lucide="upload" class="icon-lg"></i>
+                        <p>Drop files here or click to upload</p>
+                        <input type="file" hidden accept="image/*" multiple>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-input" rows="4" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Starting Bid ($)</label>
+                        <input type="number" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select class="form-input" required>
+                            <option value="">Select a category</option>
+                            <option value="watches">Watches</option>
+                            <option value="art">Art</option>
+                            <option value="antiques">Antiques</option>
+                            <option value="jewelry">Jewelry</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="closeListingModal()" class="btn-secondary">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-primary">
+                        List Item
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script >
+        // Initialize Lucide icons
+lucide.createIcons();
+
+// Sample data
+const myItems = [
+    {
+        id: '1',
+        title: 'Vintage Rolex Submariner',
+        description: 'A classic timepiece in excellent condition...',
+        image: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+        currentBid: 15000,
+        bids: 23,
+        timeLeft: '2h 15m',
+        status: 'live'
+    }
+];
+
+// DOM Elements
+const itemsGrid = document.getElementById('itemsGrid');
+const searchInput = document.getElementById('searchInput');
+const statusFilter = document.getElementById('statusFilter');
+const listingModal = document.getElementById('listingModal');
+const listingForm = document.getElementById('listingForm');
+
+// Event Listeners
+searchInput.addEventListener('input', filterItems);
+statusFilter.addEventListener('change', filterItems);
+listingForm.addEventListener('submit', handleListingSubmit);
+
+// Functions
+function renderItems(items) {
+    itemsGrid.innerHTML = items.map(item => `
+        <div class="item-card">
+            <div class="item-image">
+                <img src="${item.image}" alt="${item.title}">
+            </div>
+            <div class="item-content">
+                <h3>${item.title}</h3>
+                <div class="item-stats">
+                    <div class="stat">
+                        <p class="stat-label">Current Bid</p>
+                        <p class="stat-value">$${item.currentBid.toLocaleString()}</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-label">Total Bids</p>
+                        <p class="stat-value">${item.bids}</p>
+                    </div>
+                </div>
+                <div class="item-footer">
+                    <span class="status-badge ${item.status}">${capitalizeFirst(item.status)}</span>
+                    <span class="time-left">${item.timeLeft} left</span>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function filterItems() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const statusValue = statusFilter.value;
+
+    const filtered = myItems.filter(item => {
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm);
+        const matchesStatus = statusValue === 'all' || item.status === statusValue;
+        return matchesSearch && matchesStatus;
+    });
+
+    renderItems(filtered);
+}
+
+function capitalizeFirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function openListingModal() {
+    listingModal.classList.remove('hidden');
+}
+
+function closeListingModal() {
+    listingModal.classList.add('hidden');
+}
+
+function handleListingSubmit(e) {
+    e.preventDefault();
+    // Handle form submission
+    closeListingModal();
+}
+
+// Initial render
+renderItems(myItems);
+    </script>
+</body>
+</html>
